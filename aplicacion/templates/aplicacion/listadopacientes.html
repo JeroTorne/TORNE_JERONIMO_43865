@@ -1,0 +1,69 @@
+{% extends "aplicacion/index.html" %}
+{% load static %}
+
+
+{% block Body %}
+<header class="mastheadconsultas">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <table id="FormularioConsulta" style="text-align: justify;width: 100vh;border-color: #fff;" class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    {% for paciente in paciente %}
+                    <tr>
+                        <td>{{ paciente.perfil_paciente.id }}</td>
+                        <td>{{ paciente.perfil_paciente.nombre }}</td>
+                        <td>{{ paciente.perfil_paciente.apellido }}</td>
+                        <td><a href="" class="btn btn-primary" style="--bs-btn-padding-y: .25rem;border: transparent; background-color:cadetblue; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><i class="fa-solid fa-magnifying-glass"></i></a></td>
+                        <td><a href="" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><i class="fa fa-edit fa-sm" title="Edit Record"></i></a></td>
+                        <td><a href="{% url 'delete_pacientes' paciente.perfil_paciente.id %}" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><i class="fa fa-trash fa-sm" title="Eliminar Paciente"></i></a></td>
+                        <td><a id="pacientebtn" href="{% url 'update_historia' paciente.perfil_paciente.id %}" class="pacientebtn" style="width:28vh;">Nueva Historia Clinica&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></a></td>
+                    </tr>
+                    {% endfor %}
+                    </table>
+                </tbody>
+            </table>       
+        </div>
+    </div>
+</header>
+{% endblock Body %}
+   
+                                <!-- <a
+                                href=""
+                                class="btn btn-primary"
+                                style="--bs-btn-padding-y: .25rem;border: transparent; background-color:cadetblue; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a
+                                href=""
+                                class="btn btn-primary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                                </a>
+                                <a
+                                href=""
+                                class="btn btn-danger"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                                </a>
+                            </td>
+                            <td>
+                            <a id="pacientebtn"
+                            href="{% url 'create_historia' %}"
+                            class="pacientebtn" style="width:100%;">
+                            Nueva Historia Clinica&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></a>
+                            </td>
+                            </tr>
+
+                        </tbody>
+                </table>
+        </div>
+    </div>
+</header> -->

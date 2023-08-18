@@ -1,0 +1,27 @@
+{% extends "aplicacion/index.html" %}
+{% load static %}
+
+
+
+
+{% block Body %}
+<header class="mastheadconsultas">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <form id="FormularioConsulta" style="width: auto;" class="container" action="" method="post">
+                <div>{% csrf_token %}
+                    <table id="FormularioConsulta" style="text-align: justify;" class="table">
+                        </div>
+                        {{ form.as_table }}
+                    </table>
+                    <input id="FormularioConsulta" class="submit" type="submit" value="Enviar">
+                    <a href="{% url 'inicio' %}"class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Inicio&nbsp;&nbsp;<i class="fa fa-share fa-sm" title="List Back"></i></a>
+                </div>
+            </form>
+
+        </div>
+    </div>    
+</header>
+
+
+{% endblock Body %}
